@@ -8,14 +8,14 @@ declare type SearchParamProps = {
 // ========================================
 
 declare type SignUpParams = {
-  firstName?: string;
-  lastName?: string;
-  address1?: string;
-  city?: string;
-  state?: string;
-  postalCode?: string;
-  dateOfBirth?: string;
-  ssn?: string;
+  firstName: string;
+  lastName: string;
+  address1: string;
+  city: string;
+  state: string;
+  postalCode: string;
+  dateOfBirth: string;
+  ssn: string;
   email: string;
   password: string;
 };
@@ -172,7 +172,7 @@ declare interface PaginationProps {
   page: number;
   totalPages: number;
 }
-
+declare type PlaidLinkOptions = any;
 declare interface PlaidLinkProps {
   user: User;
   variant?: "primary" | "ghost";

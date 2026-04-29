@@ -11,6 +11,7 @@ import CustomInput from "./CustomInput";
 import { Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { signIn, signUp } from "@/lib/actions/user.actions";
+import PlaidLink from "./PlaidLink";
 
 const AuthForm = ({ type }: { type: string }) => {
   const router = useRouter();
@@ -56,11 +57,23 @@ const AuthForm = ({ type }: { type: string }) => {
 
   async function onSubmit(data: z.infer<typeof formSchema>) {
     setisLoading(true);
+
     try {
-      console.log(data);
+      const userData = {
+        email: data.email,
+        password: data.password,
+        firstName: data.firstName!,
+        lastName: data.lastName!,
+        address1: data.address!,
+        city: data.city!,
+        dateOfBirth: data.dateOfBirth!,
+        postalCode: data.postalCode!,
+        ssn: data.ssn!,
+        state: data.state!,
+      };
 
       if (type === "sign-up") {
-        const newUser = await signUp(data);
+        const newUser = await signUp(userData);
         setUser(newUser);
       }
 
@@ -104,7 +117,9 @@ const AuthForm = ({ type }: { type: string }) => {
         </div>
       </header>
       {user ? (
-        <div className="flex flex-col gap-4 md:gap-6">{/* Plaid Link */}</div>
+        <div className="flex flex-col gap-4 md:gap-6">
+          <PlaidLink user={user} variant="primary" />
+        </div>
       ) : (
         <div className="">
           <form action="" className="" onSubmit={form.handleSubmit(onSubmit)}>
