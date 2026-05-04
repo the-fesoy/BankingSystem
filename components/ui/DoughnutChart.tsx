@@ -15,7 +15,7 @@ const DoughnutChart = ({ accounts }: DoughnutChartProps) => {
     datasets: [
       {
         label: "Banks",
-        data: balances, // Example data for the doughnut chart bro these are money charts why s 91k here xdd fx it
+        data: balances, // i had an example of 91k dollars now real data shows only 100$ ;-; SHI-
         backgroundColor: ["#0747b6", "#2265d8", "#2f91fa"],
       },
     ],
