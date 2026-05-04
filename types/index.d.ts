@@ -1,10 +1,11 @@
 /* eslint-disable no-unused-vars */
-
 declare type SearchParamProps = {
+  page: any;
   params: { [key: string]: string };
-  searchParams: { [key: string]: string | string[] | undefined };
+  searchParams: Promise<{
+    [key: string]: string | string[] | undefined;
+  }>;
 };
-
 // ========================================
 
 declare type SignUpParams = {
@@ -60,7 +61,7 @@ declare type Account = {
   type: string;
   subtype: string;
   appwriteItemId: string;
-  sharableId: string;
+  sharaebleId: string;
 };
 
 declare type Transaction = {
@@ -141,6 +142,7 @@ declare interface CreditCardProps {
   account: Account;
   userName: string;
   showBalance?: boolean;
+  showCopy?: boolean;
 }
 
 declare interface BankInfoProps {

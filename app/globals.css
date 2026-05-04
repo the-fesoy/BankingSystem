@@ -473,9 +473,8 @@
   gap: 1rem;
   background: #1570ef;
   padding: 1.25rem 1rem;
-  border-top-width: 1px;
-  border-bottom-width: 1px;
   border-style: solid;
+  border-radius: 5px;
 }
 
 @media (min-width: 768px) {
